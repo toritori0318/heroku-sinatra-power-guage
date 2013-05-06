@@ -1,0 +1,32 @@
+<% if @screen_name %>
+<p>
+<%= @screen_name %>
+</p>
+<p>
+  <form method="post" action="/power_guage">
+    <select name="power">
+      <option value="10">100</option>
+      <option value="9">90</option>
+      <option value="8">80</option>
+      <option value="7">70</option>
+      <option value="6">60</option>
+      <option value="5">50</option>
+      <option value="4">40</option>
+      <option value="3">30</option>
+      <option value="2">20</option>
+      <option value="1">10</option>
+      <option value="random">今日のパワーを占う</option>
+    </select>
+    <input type="submit" value="パワーゲージ 更新！">
+  </form>
+</p>
+<p>
+  <form method="post" action="/clean_guage">
+    <input type="submit" value="パワーゲージ クリア！">
+  </form>
+</p>
+<% else %>
+<p>
+  <a href="/auth/twitter">twitter login</a>
+</p>
+<% end %>
